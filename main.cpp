@@ -11,7 +11,7 @@ struct globalArgs_t {
     int alp;
 } globalArgs;
 
-static const char *optString = "cth?";
+static const char *optString = "c:t:l:h?";
 
 static const struct option longOpts[] = {
         { "cycles", required_argument, nullptr, 'c'},
@@ -24,8 +24,11 @@ static const struct option longOpts[] = {
 void display_usage()
 {
     puts("Perceptron implemented in cpp."
-            "\nArguments: int cycles - amount of training epoches, available only 2,3,4. "
-            "\nhelp - display help");
+            "\nArguments:"
+            "\n    -c, --cycles - amount of training epoches, available only integers 2,3,4. "
+            "\n    -t, --target - list of target values, 4 elements of 0`s and 1`s, delimeter comma."
+            "\n    -l, --learning-rate - learning rate of perceptron, positive integer."
+            "\n    -h, --help - display help");
     exit ( EXIT_FAILURE );
 }
 
@@ -135,6 +138,7 @@ int main( int argc, char *argv[] )
 
             case 'l':
                 globalArgs.alp = atoi(optarg);
+                cout << "Here is optarg for alp " << optarg << endl;
                 break;
 
             case 't':
