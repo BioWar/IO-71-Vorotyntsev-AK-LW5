@@ -7,7 +7,7 @@ Getopt/getopt_long instructions could be found [here](https://www.ibm.com/develo
 <br>
 List of valid keys:
 + -h, --help, no arguments required;
-+ -c, --cycles, arguments required in range (2, 5);
++ -c, --cycles, arguments required in range (2, 4);
 + -t, --target, arguments optional list of 4 integers of 0's and 1's;
 + -l, --learning-rate, arguments optional, one positive integer, the little the better;<br>
 ### Commands for assembly<br>
@@ -27,6 +27,10 @@ List of valid keys:
 `$ ./main --cycles=3 --training-rate=1`
 <br>
 `$ ./main --cycles=2 --training-rate=2 --target=0,1,1,1`
+<br>
+`$ ./main -c 2 -l 2 --target=0,1,1,1`
+<br>
+`$ ./main --cycles=2 -t 0,1,1,1`
 <br>
 ### Handling wrong keys<br>
 `$ ./main -r --verbose`
